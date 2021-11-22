@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/titulo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ValidacionCampos">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="305dp"
+        android:layout_height="512dp"
+        app:cardBackgroundColor="#C4C4C4"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497">
+
+        <TextView
+            android:id="@+id/RegistroLP"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:text=" Registro lugares patrimoniales"
+            android:textAlignment="center"
+            android:textSize="21dp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="       * Nombre del lugar"
+            android:textAlignment="gravity"
+            android:textSize="16dp"
+            android:translationY="70dp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="       * Tipo de patrimonio"
+            android:textAlignment="gravity"
+            android:textSize="16dp"
+            android:translationY="150dp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="       * Palabras clave relacionadas"
+            android:textAlignment="gravity"
+            android:textSize="16dp"
+            android:translationY="230dp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="       * Etiqueta clave"
+            android:textAlignment="gravity"
+            android:textSize="16dp"
+            android:translationY="305dp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="       * Ubicación"
+            android:textAlignment="gravity"
+            android:textSize="16dp"
+            android:translationY="380dp" />
+
+        <EditText
+            android:id="@+id/NombreL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="    Ingresa el nombre del lugar"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#8F7E7E"
+            android:textColorHint="#6E3737"
+            android:translationY="95dp" />
+
+        <EditText
+            android:id="@+id/palabrasC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EFEDED"
+            android:backgroundTint="#FBFDFB"
+            android:ellipsize="end"
+            android:ems="10"
+            android:hint="Ejemplo...Museo,Templo"
+            android:inputType="textPersonName"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#8F7E7E"
+            android:textColorHint="#635858"
+            android:translationY="260dp" />
+
+        <EditText
+            android:id="@+id/etiquetaC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="    Ingresa el nombre del lugar"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#8F7E7E"
+            android:textColorHint="#6E3737"
+            android:translationY="330dp" />
+
+        <EditText
+            android:id="@+id/ubicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="    Ingresa el nombre del lugar"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#8F7E7E"
+            android:textColorHint="#6E3737"
+            android:translationY="400dp" />
+
+        <Spinner
+            android:spinnerMode="dropdown"
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:translationY="190dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    ,
+
+</androidx.constraintlayout.widget.ConstraintLayout>
