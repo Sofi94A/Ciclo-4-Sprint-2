@@ -1,20 +1,15 @@
 package com.example.validacioncampos;
 
-import java.util.regex.*;
-
 import android.content.DialogInterface;
-import android.text.TextUtils;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AlertDialog;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class ValidacionCampos extends AppCompatActivity {
@@ -130,8 +125,6 @@ public class ValidacionCampos extends AppCompatActivity {
             alertDialog.show();
             isValid = false;
         }
-
-
 
         return isValid;
     }
