@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ValidacionCampos</string>
+    <string name="txt_busqueda_String"> Busqueda por etiqueta </string>
+    <string name ="txt_etiqueta_String"> Ingrese la etiqueta </string>
+    <string name ="txt_codigoqr_String"> Busqueda por código QR activando la cámara </string>
+
 </resources>

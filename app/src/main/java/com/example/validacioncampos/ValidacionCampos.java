@@ -19,8 +19,9 @@ public class ValidacionCampos extends AppCompatActivity {
     private EditText etiquetaClave;
     private EditText ubicacion;
     private Button registrar;
+    private EditText keyTag;
 
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,23 +37,28 @@ public class ValidacionCampos extends AppCompatActivity {
         etiquetaClave=findViewById(R.id.etiquetaC);
         ubicacion=findViewById(R.id.ubicacion);
         registrar=findViewById(R.id.button2);
+        keyTag = findViewById(R.id.Et_m2);
+
 
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String nombreLugarValor = nombreLugar.getText().toString();
-                String dropdownValor= dropdown.getSelectedItem().toString();
-                String palabraClaveValor= palabraClave.getText().toString();
-                String etiquetaClaveValor= etiquetaClave.getText().toString();
-                String ubicacionValor= ubicacion.getText().toString();
+                String dropdownValor = dropdown.getSelectedItem().toString();
+                String palabraClaveValor = palabraClave.getText().toString();
+                String etiquetaClaveValor = etiquetaClave.getText().toString();
+                String ubicacionValor = ubicacion.getText().toString();
+                String etiquetaValor = keyTag.getText().toString();
 
-                formRegistros(nombreLugarValor,dropdownValor,palabraClaveValor,etiquetaClaveValor,ubicacionValor);
+                formRegistros(nombreLugarValor, dropdownValor, palabraClaveValor, etiquetaClaveValor, ubicacionValor);
+            }
+
+            private void formEtiqueta(String etiquetaValor) {
+                formEtiqueta(etiquetaValor);
             }
         });
 
     }
-
-
 
     // Funciones validacion
     public boolean campoVacio (String dato){
@@ -74,11 +80,10 @@ public class ValidacionCampos extends AppCompatActivity {
 
 
     public boolean formRegistros(String nombreLugar, String tipoPatrimonio, String keyWords, String keyTag, String ubicacion) {
-
         boolean isValid = true;
 
         // comprobar campos vacios
-        if(campoVacio(nombreLugar) || campoVacio(tipoPatrimonio) || campoVacio(keyWords) || campoVacio(keyTag) || campoVacio(ubicacion)){
+        if (campoVacio(nombreLugar) || campoVacio(tipoPatrimonio) || campoVacio(keyWords) || campoVacio(keyTag) || campoVacio(ubicacion)) {
             AlertDialog alertDialog = new AlertDialog.Builder(this).create();
             alertDialog.setTitle("Error");
             alertDialog.setMessage("Ningun campo puede estar vacio");
@@ -107,12 +112,12 @@ public class ValidacionCampos extends AppCompatActivity {
                     });
             alertDialog.show();
 
-            isValid=false;
+            isValid = false;
         }
 
         //Validar cantidad caracteres
 
-        if (!minTresCaracteres(nombreLugar) || !minTresCaracteres(tipoPatrimonio) || !minTresCaracteres(keyWords)|| !minTresCaracteres(keyTag) || !minTresCaracteres(ubicacion)){
+        if (!minTresCaracteres(nombreLugar) || !minTresCaracteres(tipoPatrimonio) || !minTresCaracteres(keyWords) || !minTresCaracteres(keyTag) || !minTresCaracteres(ubicacion)) {
             AlertDialog alertDialog = new AlertDialog.Builder(this).create();
             alertDialog.setTitle("Error");
             alertDialog.setMessage("Ningun campo debe tener menos de tres caracteres");
@@ -125,9 +130,47 @@ public class ValidacionCampos extends AppCompatActivity {
             alertDialog.show();
             isValid = false;
         }
-
         return isValid;
     }
+    public boolean formEtiqueta(String keyTag) {
+        boolean isValid = true;
 
-
+        if(campoVacio(keyTag)){
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("Error");
+            alertDialog.setMessage("Ningun campo puede estar vacio");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+            isValid = false;
+        }
+        String onlyTextRegex = "^[a-zA-Z]*$";
+        if (!keyTag.matches(onlyTextRegex)) {
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("Error");
+            alertDialog.setMessage("El campo nombre lugar no puede contener numeros ni caracteres especiales");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+            isValid=false;
+        }
+        if (!minTresCaracteres(keyTag)){
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("Error");
+            alertDialog.setMessage("Ningun campo debe tener menos de tres caracteres");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    (dialog, which) -> dialog.dismiss());
+            alertDialog.show();
+            isValid = false;
+        }
+        return isValid;
+    }
 }

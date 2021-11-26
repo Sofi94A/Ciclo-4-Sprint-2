@@ -6,23 +6,23 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/Iv_m5"
         android:layout_width="104dp"
         android:layout_height="101dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="16dp"
         android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintBottom_toBottomOf="@+id/Ib_m6"
+        app:layout_constraintEnd_toStartOf="@+id/Ib_m6"
         app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/Tv_m4"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/codigoqr" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/Ib_m6"
         android:layout_width="141dp"
         android:layout_height="133dp"
         android:layout_marginTop="40dp"
@@ -30,23 +30,23 @@
         android:background="@android:color/transparent"
         android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/Tv_m4"
         app:srcCompat="@drawable/camarados" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Tv_m1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="80dp"
-        android:text="Busqueda por etiqueta"
+        android:text="@string/txt_busqueda_String"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Bt_m3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -55,30 +55,30 @@
         android:text="Buscar"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/Et_m2" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/Et_m2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="Ingrese la etiqueta"
+        android:hint="@string/txt_etiqueta_String"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/Tv_m1" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/Tv_m4"
         android:layout_width="242dp"
         android:layout_height="46dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="65dp"
-        android:text="Busqueda por código QR activando la cámara"
+        android:text="@string/txt_codigoqr_String"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/Bt_m3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
